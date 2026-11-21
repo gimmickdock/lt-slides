@@ -8,47 +8,57 @@
   <style>
     body {
       background: #fff;
-      color: #000;
+      color: #111;
     }
 
     .reveal {
       font-family: "Hiragino Sans", "Yu Gothic", "Noto Sans CJK JP", Meiryo, sans-serif;
-      text-align: left;
     }
 
     .reveal .slides section {
       box-sizing: border-box;
-      padding: 0 112px;
+      padding: 0 128px;
     }
 
     .reveal h1,
     .reveal h2 {
       margin: 0;
       font-weight: 700;
-      line-height: 1.25;
     }
 
     .reveal h1 {
-      font-size: 96px;
-      letter-spacing: -0.04em;
+      font-size: 112px;
+      line-height: 1.08;
+      letter-spacing: -0.055em;
+    }
+
+    .cover-lead {
+      display: block;
+      margin-bottom: 26px;
+      font-size: 0.48em;
+      letter-spacing: -0.035em;
     }
 
     .reveal h2 {
-      font-size: 80px;
-      letter-spacing: -0.04em;
+      font-size: 27px;
+      line-height: 1.4;
+      letter-spacing: 0.12em;
     }
 
     .intro {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 360px;
+      grid-template-columns: minmax(0, 1fr) 384px;
       align-items: center;
-      gap: 56px;
+      gap: 80px;
+      text-align: left;
     }
 
     .intro p {
-      margin: 24px 0 0;
-      font-size: 48px;
-      line-height: 1.4;
+      margin: 30px 0 0;
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.055em;
     }
 
     .intro img {
@@ -62,13 +72,13 @@
   <div class="reveal">
     <div class="slides">
       <section>
-        <h1>AI使って<br>楽したり楽しくなったり</h1>
+        <h1><span class="cover-lead">AI使って</span>楽したり<br>楽しくなったり</h1>
       </section>
       <section>
         <div class="intro">
           <div>
             <h2>自己紹介</h2>
-            <p>ノムラです。こんにちは。</p>
+            <p>ノムラです。<br>こんにちは。</p>
           </div>
           <img src="assets/nomura.png" width="400" height="400" alt="ノムラの自己紹介画像">
         </div>
