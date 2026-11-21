@@ -8,117 +8,157 @@
   <style>
     body,
     body.reveal-viewport {
-      background: #f2eee3;
-      color: #28261f;
+      background: #fff;
+      color: #22211f;
     }
 
     .reveal {
-      font-family: "Hiragino Sans", "Yu Gothic", "Noto Sans CJK JP", Meiryo, sans-serif;
+      --gothic: "Hiragino Sans", "Yu Gothic", "Noto Sans CJK JP", Meiryo, sans-serif;
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif CJK JP", serif;
     }
 
     .reveal .slides section {
       box-sizing: border-box;
-      padding: 0 128px;
+      padding: 0 112px;
       text-align: left;
     }
 
     .reveal h1,
-    .reveal h2 {
+    .reveal h2,
+    .reveal p,
+    .reveal figure,
+    .reveal blockquote {
       margin: 0;
+    }
+
+    .reveal h1,
+    .reveal h2 {
+      font-weight: 500;
+      letter-spacing: -0.035em;
+    }
+
+    .reveal h1 {
+      font-size: 94px;
+      line-height: 1.2;
+    }
+
+    .reveal h2 {
+      font-size: 68px;
+      line-height: 1.25;
     }
 
     .reveal .slides .cover {
       height: 720px;
-      padding-top: 94px;
-    }
-
-    .reveal h1 {
-      font-size: 92px;
-      font-weight: 500;
-      line-height: 1.28;
-      letter-spacing: -0.04em;
+      padding-top: 112px;
     }
 
     .cover-lead {
       display: block;
-      margin-bottom: 18px;
-      font-size: 48px;
+      margin-bottom: 22px;
+      font-size: 0.55em;
     }
 
-    .reveal h2 {
-      font-size: 22px;
+    .reveal .label,
+    .reveal .detail,
+    .reveal figcaption,
+    .reveal table {
+      font-family: var(--gothic);
+    }
+
+    .reveal .label {
+      margin-bottom: 24px;
+      color: #53514d;
+      font-size: 24px;
       font-weight: 500;
       line-height: 1.5;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.09em;
     }
 
-    .intro {
+    .reveal .detail {
+      margin-top: 24px;
+      font-size: 29px;
+      line-height: 1.55;
+    }
+
+    .split {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 460px;
+      grid-template-columns: minmax(0, 1fr) 520px;
       align-items: center;
-      gap: 96px;
+      gap: 56px;
     }
 
-    .speaker-name {
-      margin: 24px 0 12px;
-      font-size: 62px;
-      font-weight: 500;
-      line-height: 1.3;
-      letter-spacing: -0.04em;
+    .split.portrait {
+      grid-template-columns: minmax(0, 1fr) 390px;
+      gap: 90px;
     }
 
-    .speaker-role {
-      margin: 0;
-      font-size: 28px;
-      line-height: 1.5;
-    }
-
-    .intro img {
+    .reveal img {
       display: block;
       width: 100%;
       height: auto;
     }
 
-    .history {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 512px;
-      align-items: center;
-      gap: 64px;
-    }
-
-    .history .year {
-      margin: 16px 0 6px;
-      font-size: 108px;
-      font-weight: 500;
-      line-height: 1;
-      letter-spacing: -0.055em;
-    }
-
-    .history .event {
-      margin: 0;
-      font-size: 31px;
-      line-height: 1.45;
-    }
-
-    .history figure {
-      margin: 0;
-    }
-
-    .history img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    .history figcaption {
+    .reveal figcaption {
       margin-top: 14px;
-      font-size: 18px;
+      font-size: 20px;
       line-height: 1.45;
     }
 
-    .history a {
+    .reveal a {
       color: inherit;
       text-underline-offset: 0.2em;
+    }
+
+    .reveal .number {
+      font-size: 110px;
+      font-variant-numeric: lining-nums tabular-nums;
+      line-height: 1.05;
+    }
+
+    .reveal .statement {
+      font-size: 82px;
+    }
+
+    .reveal .workflow {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 50px;
+      margin: 50px 0 0;
+      padding-left: 34px;
+      font-size: 41px;
+      line-height: 1.4;
+    }
+
+    .workflow li::marker {
+      font-family: var(--gothic);
+      font-size: 23px;
+      color: #53514d;
+    }
+
+    .reveal table {
+      width: 100%;
+      margin-top: 38px;
+      border-collapse: collapse;
+      font-size: 25px;
+      line-height: 1.4;
+    }
+
+    .reveal th,
+    .reveal td {
+      padding: 17px 20px;
+      border-bottom: 1px solid #d7d4cf;
+      text-align: left;
+    }
+
+    .reveal td:nth-child(2) {
+      white-space: nowrap;
+    }
+
+    .reveal blockquote {
+      max-width: 960px;
+      font-size: 59px;
+      line-height: 1.55;
+      letter-spacing: -0.025em;
     }
   </style>
 </head>
@@ -128,28 +168,137 @@
       <section class="cover">
         <h1><span class="cover-lead">AI使って</span>楽したり<br>楽しくなったり</h1>
       </section>
+
       <section>
-        <div class="intro">
+        <div class="split portrait">
           <div>
-            <h2>自己紹介</h2>
-            <p class="speaker-name">ノムラ</p>
-            <p class="speaker-role">株式会社LegalOn Technologies<br>デザイナー</p>
+            <p class="label">自己紹介</p>
+            <h2>ノムラ</h2>
+            <p class="detail">株式会社LegalOn Technologies<br>デザイナー</p>
           </div>
           <img src="assets/nomura.png" width="400" height="400" alt="ノムラの自己紹介画像">
         </div>
       </section>
+
       <section>
-        <div class="history">
+        <div class="split">
           <div>
-            <h2>古参ムーブ</h2>
-            <p class="year">2018</p>
-            <p class="event">InHouseDesigners<br>vol. 3 に参加</p>
+            <p class="label">まずは古参ムーブ</p>
+            <h2 class="number">2018</h2>
+            <p class="detail">InHouseDesigners vol. 3 に参加</p>
           </div>
           <figure>
             <img src="assets/inhouse-designers-2018.jpg" width="960" height="503" alt="InHouseDesigners vol. 3 のイベント参加レポートの見出し画像">
             <figcaption><a href="https://note.com/gimmickdock/n/n0c06da101080">当時の参加レポート（note）</a></figcaption>
           </figure>
         </div>
+      </section>
+
+      <section>
+        <div class="split">
+          <div>
+            <p class="label">前回のチョットAI会</p>
+            <h2>全然、<br>チョットじゃない。</h2>
+            <p class="detail">今日は、もっと気軽な使い方の話。</p>
+          </div>
+          <img src="assets/lower-the-bar.png" width="1733" height="908" alt="ハードルのバーを低くする人のイラスト">
+        </div>
+      </section>
+
+      <section>
+        <p class="label">このLTから持ち帰ってほしいこと</p>
+        <h2 class="statement">無いです。</h2>
+        <p class="detail">「へー」「ふーん」と思ってもらえたら十分です。</p>
+      </section>
+
+      <section>
+        <p class="label">今日の話</p>
+        <h2 class="statement">しんどい作業が、<br>生きがいになるまで。</h2>
+      </section>
+
+      <section>
+        <div class="split">
+          <div>
+            <p class="label">大学で非常勤講師</p>
+            <h2>全8回の<br>ワークショップ</h2>
+            <p class="detail">社会課題を見つける<br>解決策を考える<br>動画で発表する</p>
+          </div>
+          <img src="assets/university-workshop.png" width="1733" height="907" alt="大学の教室で学生がグループワークをするイラスト">
+        </div>
+      </section>
+
+      <section>
+        <div class="split">
+          <div>
+            <p class="label">成績をつけるのがしんどい</p>
+            <h2 class="number">50〜60人</h2>
+            <p class="detail">評価の中心はレポート。<br>動画の出来に応じて加点。</p>
+          </div>
+          <img src="assets/grading-workload.png" width="1733" height="907" alt="動画とレポートを見ながら学生の成績をつける講師のイラスト">
+        </div>
+      </section>
+
+      <section>
+        <p class="label">3年目から</p>
+        <h2>AIに採点を任せる</h2>
+        <ol class="workflow">
+          <li>過去の採点から<br>基準案を作る</li>
+          <li>講師が<br>基準を直す</li>
+          <li>その基準で<br>AIが採点する</li>
+        </ol>
+      </section>
+
+      <section>
+        <p class="label">採点基準の一部</p>
+        <h2>何を見て点をつけるか</h2>
+        <table aria-label="採点基準の例">
+          <thead>
+            <tr><th scope="col">項目</th><th scope="col">配点</th><th scope="col">見るポイント</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">アイデアの質・広がり</th><td>0〜2点</td><td>リサーチや課題設定とのつながり</td></tr>
+            <tr><th scope="row">解決策の価値</th><td>0〜3点</td><td>誰の行動がどう変わるか</td></tr>
+            <tr><th scope="row">リサーチの活用</th><td>0〜4点</td><td>調査から課題と解決策を導けているか</td></tr>
+          </tbody>
+        </table>
+        <p class="detail">重視したこと　学生同士の視点がデザインに反映されているか</p>
+      </section>
+
+      <section>
+        <p class="label">ここでもう一捻り</p>
+        <h2>「講師が読んで嬉しい感想を<br>ピックアップして」</h2>
+      </section>
+
+      <section>
+        <p class="label">学生の感想 · 楽しかった系（抜粋）</p>
+        <blockquote>「自分のアイデアが他の人の意見によってさらに面白いものに発展したりする過程がとても楽しく、毎週の授業が楽しみでした。」</blockquote>
+      </section>
+
+      <section>
+        <p class="label">学生の感想 · 価値観ゆさぶった系（抜粋）</p>
+        <blockquote>「今までは何を作るかばかり考えていましたが、それが人や社会に与える影響に目がいくようになりました。」</blockquote>
+      </section>
+
+      <section>
+        <p class="label">学生の感想 · なんかジャストミート（抜粋）</p>
+        <blockquote>「こういう経験がしたくて日本に来たので、留学して本当によかったと感じました。」</blockquote>
+      </section>
+
+      <section>
+        <p class="label">採点の先にあったもの</p>
+        <h2 class="statement">もはやこれ、<br>生きがいです。</h2>
+      </section>
+
+      <section>
+        <p class="label">真面目な話</p>
+        <h2>「それAIで簡単に<br>できるんでしょ」</h2>
+        <p class="detail">そんな時代に、どうやって作る気持ちを保つか。</p>
+      </section>
+
+      <section>
+        <p class="label">最後に古参ムーブ</p>
+        <h2>小さなコミュニティで<br>LTして、褒めてもらおう。</h2>
+        <p class="detail">お聞きいただき、ありがとうございました。</p>
       </section>
     </div>
   </div>
