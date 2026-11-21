@@ -6,19 +6,19 @@
   <title>AI使って楽したり楽しくなったり</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.css">
   <style>
-    body {
-      background: #fff;
-      color: #111;
+    body,
+    body.reveal-viewport {
+      background: #f2eee3;
+      color: #28261f;
     }
 
     .reveal {
-      --display-font: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif CJK JP", serif;
       font-family: "Hiragino Sans", "Yu Gothic", "Noto Sans CJK JP", Meiryo, sans-serif;
     }
 
     .reveal .slides section {
       box-sizing: border-box;
-      padding: 0 152px;
+      padding: 0 128px;
       text-align: left;
     }
 
@@ -27,13 +27,22 @@
       margin: 0;
     }
 
+    .reveal .slides .cover {
+      height: 720px;
+      padding-top: 94px;
+    }
+
     .reveal h1 {
-      font-family: var(--display-font);
-      font-size: 86px;
+      font-size: 92px;
       font-weight: 500;
-      line-height: 1.32;
-      letter-spacing: -0.025em;
-      font-feature-settings: "palt";
+      line-height: 1.28;
+      letter-spacing: -0.04em;
+    }
+
+    .cover-lead {
+      display: block;
+      margin-bottom: 18px;
+      font-size: 48px;
     }
 
     .reveal h2 {
@@ -45,23 +54,16 @@
 
     .intro {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 336px;
+      grid-template-columns: minmax(0, 1fr) 460px;
       align-items: center;
-      gap: 112px;
+      gap: 96px;
     }
 
     .intro p {
-      margin: 38px 0 0;
-      font-family: var(--display-font);
-      font-size: 36px;
-      line-height: 1.45;
-    }
-
-    .intro-lead {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 64px;
+      margin: 32px 0 0;
+      font-size: 62px;
       font-weight: 500;
+      line-height: 1.3;
       letter-spacing: -0.04em;
     }
 
@@ -75,14 +77,14 @@
 <body>
   <div class="reveal">
     <div class="slides">
-      <section>
-        <h1>AI使って楽したり<br>楽しくなったり</h1>
+      <section class="cover">
+        <h1><span class="cover-lead">AI使って</span>楽したり<br>楽しくなったり</h1>
       </section>
       <section>
         <div class="intro">
           <div>
             <h2>自己紹介</h2>
-            <p><span class="intro-lead">ノムラです。</span>こんにちは。</p>
+            <p>ノムラです。<br>こんにちは。</p>
           </div>
           <img src="assets/nomura.png" width="400" height="400" alt="ノムラの自己紹介画像">
         </div>
