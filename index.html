@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI使って楽したり楽しくなったり</title>
+  <title>AIで楽したり楽しんだり</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.css">
   <style>
     body,
@@ -31,6 +31,12 @@
       margin: 0;
     }
 
+    .reveal .slides section.feedback-slide > img.feedback-illustration {
+      width: 780px;
+      height: auto;
+      margin: 24px 0 0 auto;
+    }
+
     .reveal h1,
     .reveal h2 {
       font-weight: 500;
@@ -54,14 +60,19 @@
 
     .cover-lead {
       display: block;
-      margin-bottom: 33px;
-      font-size: 0.55em;
+      font-size: 1em;
+    }
+
+    .reveal .slides .cover > .cover-credit {
+      position: absolute;
+      right: 168px;
+      bottom: 90px;
+      font-size: 36px;
+      line-height: 1.5;
     }
 
     .reveal .label,
-    .reveal .detail,
-    .reveal figcaption,
-    .reveal table {
+    .reveal figcaption {
       font-family: var(--gothic);
     }
 
@@ -72,6 +83,10 @@
       font-weight: 500;
       line-height: 1.5;
       letter-spacing: 0.09em;
+    }
+
+    .portrait .label {
+      font-size: 30px;
     }
 
     .reveal .detail {
@@ -119,6 +134,69 @@
       font-size: 123px;
     }
 
+    .reveal .topic-list {
+      margin: 48px 0 0;
+      padding-left: 1.3em;
+      font-size: 43.5px;
+      line-height: 1.8;
+    }
+
+    .topic-list:has(.selected-topic) > li {
+      color: #999590;
+    }
+
+    .topic-list:has(.selected-topic) > .selected-topic {
+      font-weight: 700;
+      color: #a52c24;
+    }
+
+    .reveal .event-history h2 {
+      margin-bottom: 60px;
+      font-size: 165px;
+      line-height: 1.2;
+    }
+
+    .event-history .split {
+      grid-template-columns: minmax(0, 1fr) 720px;
+      gap: 90px;
+    }
+
+    .reveal .event-history .detail {
+      margin-top: 0;
+    }
+
+    .reveal .event-history .event-year {
+      margin-top: 36px;
+    }
+
+    .ai-intro .split {
+      grid-template-columns: minmax(0, 1fr) 660px;
+      gap: 60px;
+    }
+
+    .ai-intro .unbroken {
+      white-space: nowrap;
+    }
+
+    .reveal .teaching h2 {
+      margin-bottom: 54px;
+      line-height: 1.2;
+    }
+
+    .teaching .split {
+      grid-template-columns: minmax(0, 1fr) 780px;
+      gap: 84px;
+    }
+
+    .reveal .teaching .detail {
+      margin-top: 0;
+    }
+
+    .reveal .teaching .class-outline {
+      margin-top: 30px;
+      line-height: 1.7;
+    }
+
     .reveal .workflow {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -133,6 +211,27 @@
       font-family: var(--gothic);
       font-size: 34.5px;
       color: #53514d;
+    }
+
+    .reveal .grading-ai .workflow {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin-top: 54px;
+      gap: 54px;
+      padding-left: 42px;
+      font-size: 36px;
+      line-height: 1.55;
+    }
+
+    .grading-ai .workflow .step-description {
+      display: block;
+      margin-top: 12px;
+      font-size: 28px;
+      line-height: 1.6;
+    }
+
+    .reveal .grading-ai .grading-flow-image {
+      margin-top: 24px;
+      width: 100%;
     }
 
     .reveal table {
@@ -154,9 +253,52 @@
       white-space: nowrap;
     }
 
+    .reveal .rubric table {
+      font-family: "Klee", "Klee One", "Tsukushi A Round Gothic", "Hiragino Maru Gothic ProN", var(--gothic);
+      table-layout: fixed;
+      width: 90%;
+      margin-top: 96px;
+      font-size: 25px;
+      line-height: 1.4;
+    }
+
+    .reveal .rubric th,
+    .reveal .rubric td {
+      padding: 10px 16px;
+      border: 1px solid #d7d4cf;
+      vertical-align: top;
+    }
+
+    .rubric thead {
+      background: #f6f5f2;
+    }
+
+    .reveal .rubric td:nth-child(2) {
+      white-space: normal;
+    }
+
+    .reveal .rubric .detail {
+      margin-top: 102px;
+      font-size: 48px;
+      line-height: 1.5;
+    }
+
+    .reveal .slides section.serious-talk > .serious-talk-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 420px;
+      align-items: center;
+      gap: 64px;
+    }
+
+    .reveal .slides section.serious-talk > .serious-talk-layout > img {
+      width: 420px;
+      height: auto;
+      align-self: start;
+    }
+
     .reveal blockquote {
       max-width: 1440px;
-      font-size: 88.5px;
+      font-size: 57px;
       line-height: 1.55;
       letter-spacing: -0.025em;
     }
@@ -188,33 +330,43 @@
     .presentation-progress {
       position: absolute;
       top: 22px;
-      right: 32px;
+      right: 12px;
       z-index: 13;
       display: grid;
-      grid-template-columns: 58px 190px 70px 74px;
+      grid-template-columns: 120px 18px;
+      grid-template-rows: 12px 12px;
       align-items: center;
-      gap: 5px 10px;
+      gap: 0 4px;
       color: #55534f;
       font: 500 12px/1.3 var(--gothic);
       font-variant-numeric: tabular-nums;
     }
 
+    .presentation-progress label,
     .presentation-progress output {
-      text-align: right;
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
     }
+
+    #page-progress { grid-area: 2 / 1; }
+    #timer-progress { grid-area: 1 / 1; }
 
     .presentation-progress input {
       appearance: none;
       width: 100%;
-      height: 20px;
+      height: 12px;
       margin: 0;
-      background: linear-gradient(to right, #55534f var(--fill, 0%), #dedcd7 var(--fill, 0%))
-        center / 100% 4px no-repeat;
+      background: linear-gradient(to right, #aaa8a3 var(--fill, 0%), #e5e3df var(--fill, 0%))
+        center / 100% 2px no-repeat;
       cursor: pointer;
     }
 
     .presentation-progress input::-webkit-slider-thumb {
       appearance: none;
+      opacity: 0;
       width: 10px;
       height: 10px;
       border-radius: 50%;
@@ -222,6 +374,7 @@
     }
 
     .presentation-progress input::-moz-range-thumb {
+      opacity: 0;
       width: 10px;
       height: 10px;
       border: 0;
@@ -234,21 +387,31 @@
     }
 
     #timer-toggle {
-      padding: 4px 6px;
-      border: 1px solid #dedcd7;
+      visibility: visible;
+      grid-area: 1 / 2;
+      width: 18px;
+      height: 18px;
+      padding: 3px;
+      border: 0;
       border-radius: 4px;
       background: #fff;
-      color: inherit;
+      color: #aaa8a3;
       font: inherit;
       cursor: pointer;
     }
+
+    #timer-toggle svg { display: block; width: 12px; height: 12px; }
+    #timer-toggle .reset-icon { display: none; }
+    #timer-toggle[data-running="true"] .play-icon { display: none; }
+    #timer-toggle[data-running="true"] .reset-icon { display: block; }
   </style>
 </head>
 <body>
   <div class="reveal">
     <div class="slides">
       <section class="cover">
-        <h1><span class="cover-lead">AI使って</span>楽したり<br>楽しくなったり</h1>
+        <h1><span class="cover-lead"><span style="letter-spacing: -30px;">Ａ</span>Ｉで</span>楽したり<br>楽しんだり</h1>
+        <p class="cover-credit">2026.11.27 ノムラ</p>
       </section>
 
       <section>
@@ -262,12 +425,12 @@
         </div>
       </section>
 
-      <section>
+      <section class="event-history">
+        <h2>まずは古参ムーブ</h2>
         <div class="split">
           <div>
-            <p class="label">まずは古参ムーブ</p>
-            <h2 class="number">2018</h2>
-            <p class="detail">InHouseDesigners vol. 3 に参加</p>
+            <p class="detail"><b>デザイナーから働きかける<br>"チームビルディング"<br>- InHouseDesigners #3</b><br>から参加</p>
+            <p class="detail event-year">2018年のイベント</p>
           </div>
           <figure>
             <img src="assets/inhouse-designers-2018.jpg" width="960" height="503" alt="InHouseDesigners vol. 3 のイベント参加レポートの見出し画像">
@@ -276,74 +439,102 @@
         </div>
       </section>
 
-      <section>
+      <section class="ai-intro">
         <div class="split">
           <div>
             <p class="label">前回のチョットAI会</p>
-            <h2>全然、<br>チョットじゃない。</h2>
-            <p class="detail">今日は、もっと気軽な使い方の話。</p>
+            <h2>全然、<br><span class="unbroken">チョットじゃない</span></h2>
+            <p class="detail">もっとハードル下げていこうぜ！</p>
           </div>
           <img src="assets/lower-the-bar.png" width="1733" height="908" alt="ハードルのバーを低くする人のイラスト">
         </div>
       </section>
 
       <section>
-        <p class="label">このLTから持ち帰ってほしいこと</p>
-        <h2 class="statement">無いです。</h2>
+        <h2>この<span style="letter-spacing: 0.06em;">LT</span>から<br>持ち帰ってほしいこと</h2>
+      </section>
+
+      <section>
+        <h2 class="statement">無いです</h2>
         <p class="detail">「へー」「ふーん」と思ってもらえたら十分です。</p>
       </section>
 
       <section>
-        <p class="label">今日の話</p>
-        <h2 class="statement">しんどい作業が、<br>生きがいになるまで。</h2>
+        <h2>話のネタ</h2>
+        <ul class="topic-list">
+          <li>しんどい作業を生き甲斐に変えた話</li>
+          <li>ワークショップのアウトプット評価にAI使った話</li>
+          <li>自分に合った英語トレーニングの構築と実践</li>
+          <li>360度評価をAIに押し付けたらその評価制度が無くなった</li>
+        </ul>
       </section>
 
       <section>
+        <h2>話のネタ</h2>
+        <ul class="topic-list">
+          <li class="selected-topic">しんどい作業を生き甲斐に変えた話</li>
+          <li>ワークショップのアウトプット評価にAI使った話</li>
+          <li>自分に合った英語トレーニングの構築と実践</li>
+          <li>360度評価をAIに押し付けたらその評価制度が無くなった</li>
+        </ul>
+      </section>
+
+      <section>
+        <p class="label">今日の話</p>
+        <h2 class="statement">しんどい作業が、<br>生きがいになるまで</h2>
+      </section>
+
+      <section class="teaching">
+        <h2>大学で非常勤講師を<br>やってまして</h2>
         <div class="split">
           <div>
-            <p class="label">大学で非常勤講師</p>
-            <h2>全8回の<br>ワークショップ</h2>
-            <p class="detail">社会課題を見つける<br>解決策を考える<br>動画で発表する</p>
+            <p class="detail">4〜5月・週1回・全8回<br>ワークショップ形式の授業</p>
+            <p class="detail class-outline">社会課題を見つける<br>解決策を考える<br>動画でアウトプットする</p>
           </div>
           <img src="assets/university-workshop.png" width="1733" height="907" alt="大学の教室で学生がグループワークをするイラスト">
         </div>
       </section>
 
-      <section>
+      <section class="teaching">
+        <h2>成績をつけるのが<br>しんどい</h2>
         <div class="split">
           <div>
-            <p class="label">成績をつけるのがしんどい</p>
-            <h2 class="number">50〜60人</h2>
-            <p class="detail">評価の中心はレポート。<br>動画の出来に応じて加点。</p>
+            <p class="detail">50〜60人分のレポートを評価<br>めちゃ時間かかるし、<br>評価軸がブレまくる</p>
+            <p class="detail class-outline">ていうか全員100点でよくない？</p>
           </div>
           <img src="assets/grading-workload.png" width="1733" height="907" alt="動画とレポートを見ながら学生の成績をつける講師のイラスト">
         </div>
       </section>
 
-      <section>
-        <p class="label">3年目から</p>
-        <h2>AIに採点を任せる</h2>
+      <section class="teaching grading-ai">
+        <h2>となればAIの出番だ</h2>
+        <p class="detail">AIに任せた方がむしろ誠実では？と考える</p>
         <ol class="workflow">
-          <li>過去の採点から<br>基準案を作る</li>
-          <li>講師が<br>基準を直す</li>
-          <li>その基準で<br>AIが採点する</li>
+          <li><b>過去データから</b><span class="step-description">２年目までのレポートと<br>採点結果をすべてAIへ</span></li>
+          <li><b>AIが基準を整理</b><span class="step-description">採点基準と根拠を<br>書き出させる</span></li>
+          <li><b>自分で修正</b><span class="step-description">AIが出した基準を<br>確認して直す</span></li>
+          <li><b>AIが採点</b><span class="step-description">修正した基準で<br>新しいレポートを採点</span></li>
         </ol>
+        <img class="grading-flow-image" src="assets/ai-grading-flow.png" width="2172" height="724" alt="１・２年目のレポートからAIが採点基準を整理し、講師が確認・修正した基準でAIが新しいレポートを採点する流れ">
       </section>
 
-      <section>
-        <p class="label">採点基準の一部</p>
-        <h2>何を見て点をつけるか</h2>
+      <section class="rubric">
+        <h2>採点基準こんな感じ<span style="font-size: 0.55em;">（一部）</span></h2>
         <table aria-label="採点基準の例">
+          <colgroup><col style="width: 20%"><col style="width: 20%"><col style="width: 19%"><col style="width: 41%"></colgroup>
           <thead>
-            <tr><th scope="col">項目</th><th scope="col">配点</th><th scope="col">見るポイント</th></tr>
+            <tr><th scope="col">区分</th><th scope="col">項目</th><th scope="col">配点</th><th scope="col">見るポイント</th></tr>
           </thead>
           <tbody>
-            <tr><th scope="row">アイデアの質・広がり</th><td>0〜2点</td><td>リサーチや課題設定とのつながり</td></tr>
-            <tr><th scope="row">解決策の価値</th><td>0〜3点</td><td>誰の行動がどう変わるか</td></tr>
-            <tr><th scope="row">リサーチの活用</th><td>0〜4点</td><td>調査から課題と解決策を導けているか</td></tr>
+            <tr><th scope="rowgroup" rowspan="2">B アイデア</th><td>B1 件数</td><td>0.1点/件(上限2)</td><td>重複・サンプル同文は除く</td></tr>
+            <tr><td>B2 質・広がり</td><td>0〜2</td><td>説明・展開があり、リサーチや課題設定と繋がっているか</td></tr>
+            <tr><th scope="rowgroup" rowspan="3">C ソリューション</th><td>C1 新規性</td><td>0〜2</td><td>模倣でない独自の着眼・組み合わせ</td></tr>
+            <tr><td>C2 価値</td><td>0〜3</td><td>誰のどんな行動変容を生み、どんな価値をもたらすか</td></tr>
+            <tr><td>C3 リサーチ活用</td><td>0〜4</td><td>リサーチ→課題→解の導出が読み取れるか</td></tr>
+            <tr><th scope="row">D チームワーク</th><td>D1 貢献</td><td>0〜3</td><td>自チーム内での役割遂行・主体性の具体性のみ</td></tr>
           </tbody>
         </table>
-        <p class="detail">重視したこと　学生同士の視点がデザインに反映されているか</p>
+        <p class="detail"><b>学生同士で価値観や視点を共有しあって、<br>それをデザインに反映できてる</b>ことを重視</p>
       </section>
 
       <section>
@@ -351,36 +542,46 @@
         <h2>「講師が読んで嬉しい感想を<br>ピックアップして」</h2>
       </section>
 
-      <section>
-        <p class="label">学生の感想 · 楽しかった系（抜粋）</p>
-        <blockquote>「自分のアイデアが他の人の意見によってさらに面白いものに発展したりする過程がとても楽しく、毎週の授業が楽しみでした。」</blockquote>
+      <section class="feedback-slide">
+        <p class="label">楽しかった系</p>
+        <blockquote>自分では思いつかないアイデアに触れたり、自分のアイデアが他の人の意見によってさらに面白いものに発展したりする過程がとても楽しく、毎週の授業が楽しみでした</blockquote>
+        <img class="feedback-illustration" src="assets/feedback-ideas.png" width="1733" height="908" alt="対話によってアイデアが発展する学生たち">
+      </section>
+
+      <section class="feedback-slide">
+        <p class="label">価値観ゆさぶった系</p>
+        <blockquote>今までは何を作るかばかり考えていましたが、それが人や社会に与える影響に目がいくようになりました。他の人の意見を取り入れながら試行錯誤する過程にも価値があると感じ、自分のデザインへの取り組み方が大きく変わったように思います</blockquote>
+        <img class="feedback-illustration" src="assets/feedback-perspective.png" width="1733" height="908" alt="人や社会への影響に視点が広がる様子">
+      </section>
+
+      <section class="feedback-slide">
+        <p class="label">なんかジャストミート</p>
+        <blockquote>異なる文化や価値観を持つ日本人の学生と、意見を交わしながら一緒にデザインに取り組むことができました。こういう経験がしたくて日本に来たので、留学して本当によかったと感じました</blockquote>
+        <img class="feedback-illustration" src="assets/feedback-cultural-exchange.png" width="1733" height="908" alt="異文化の学生たちが一緒にデザインする様子">
       </section>
 
       <section>
-        <p class="label">学生の感想 · 価値観ゆさぶった系（抜粋）</p>
-        <blockquote>「今までは何を作るかばかり考えていましたが、それが人や社会に与える影響に目がいくようになりました。」</blockquote>
+        <p class="detail" style="margin: 0 0 48px;">だるいレポート採点のその向こうから光が差した<br>これ無しではもう生きていけない</p>
+        <h2 class="statement">もはやこれは生きがい</h2>
       </section>
 
-      <section>
-        <p class="label">学生の感想 · なんかジャストミート（抜粋）</p>
-        <blockquote>「こういう経験がしたくて日本に来たので、留学して本当によかったと感じました。」</blockquote>
+      <section class="serious-talk">
+        <h2>真面目な話</h2>
+        <div class="serious-talk-layout">
+          <div>
+        <p class="detail"><b>「それAIで簡単にできるんでしょ」</b></p>
+        <p class="detail">どれだけ手をかけて作っても、そう言われる時代<br>AIに褒めてもらっても、どこか空虚</p>
+        <p class="detail"><b>デザイナーは承認欲求の権化なので</b>（私見）、<br>これは由々しき事態</p>
+        <p class="detail">ものづくりのモチベーションを<br>保てなくなっている人もいるのでは</p>
+        <p class="detail">今回の私のLTが何かの参考になったら幸い</p>
+          </div>
+          <img src="assets/serious-talk.png" width="1254" height="1254" alt="AIによる制作と称賛について考えるデザイナー">
+        </div>
       </section>
 
-      <section>
-        <p class="label">採点の先にあったもの</p>
-        <h2 class="statement">もはやこれ、<br>生きがいです。</h2>
-      </section>
-
-      <section>
-        <p class="label">真面目な話</p>
-        <h2>「それAIで簡単に<br>できるんでしょ」</h2>
-        <p class="detail">そんな時代に、どうやって作る気持ちを保つか。</p>
-      </section>
-
-      <section>
-        <p class="label">最後に古参ムーブ</p>
-        <h2>小さなコミュニティで<br>LTして、褒めてもらおう。</h2>
-        <p class="detail">お聞きいただき、ありがとうございました。</p>
+      <section class="event-history">
+        <h2>シメの古参ムーブ</h2>
+        <p class="detail">ここみたいな小さなコミュニティでいろいろ共有しあって、<br>ふんわり承認欲求満たしていったら良いんじゃない？</p>
       </section>
     </div>
     <button class="edge-nav" type="button" data-direction="prev" aria-label="前のスライド"></button>
@@ -391,8 +592,11 @@
       <output id="page-count" for="page-progress" aria-live="off"></output>
       <label id="timer-label" for="timer-progress">経過時間</label>
       <input id="timer-progress" type="range" min="0" max="600" value="0">
-      <output id="elapsed-time" for="timer-progress" aria-live="off">0:00 / 10:00</output>
-      <button id="timer-toggle" type="button">スタート</button>
+      <output id="elapsed-time" for="timer-progress" aria-live="off">0:00</output>
+      <button id="timer-toggle" type="button" aria-label="スタート" title="スタート" data-running="false">
+        <svg class="play-icon" viewBox="0 0 24 24" role="presentation" focusable="false"><path d="M7 4v16l13-8z" fill="currentColor"/></svg>
+        <svg class="reset-icon" viewBox="0 0 24 24" role="presentation" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10a9 9 0 1 1 2 8M3 4v6h6"/></svg>
+      </button>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.js"></script>
@@ -416,7 +620,7 @@
       timerProgress.value = seconds;
       const minutes = Math.floor(seconds / 60);
       const remainder = String(seconds % 60).padStart(2, '0');
-      elapsedTime.value = `${minutes}:${remainder} / 10:00`;
+      elapsedTime.value = `${minutes}:${remainder}`;
       timerProgress.setAttribute('aria-valuetext', `${minutes}分${seconds % 60}秒`);
       fillProgress(timerProgress);
     }
@@ -438,12 +642,16 @@
       if (timerStart === null) {
         timerStart = performance.now() - Number(timerProgress.value) * 1000;
         timerInterval = setInterval(tick, 100);
-        timerToggle.textContent = 'リセット';
+        timerToggle.dataset.running = 'true';
+        timerToggle.setAttribute('aria-label', 'リセット');
+        timerToggle.title = 'リセット';
       } else {
         clearInterval(timerInterval);
         timerStart = null;
         renderTime(0);
-        timerToggle.textContent = 'スタート';
+        timerToggle.dataset.running = 'false';
+        timerToggle.setAttribute('aria-label', 'スタート');
+        timerToggle.title = 'スタート';
       }
     });
     renderTime(0);
