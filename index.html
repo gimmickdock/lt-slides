@@ -3,23 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LT Slides</title>
+  <title>AI使って楽したり楽しくなったり</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/theme/black.css">
   <style>
-    .reveal { font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif; }
-    .reveal h1 { font-size: 2.5em; font-weight: 700; }
-    .reveal p { color: #cbd5e1; }
+    body {
+      background: #fff;
+      color: #000;
+    }
+
+    .reveal {
+      font-family: "Hiragino Sans", "Yu Gothic", "Noto Sans CJK JP", Meiryo, sans-serif;
+      text-align: left;
+    }
+
+    .reveal .slides section {
+      box-sizing: border-box;
+      padding: 0 112px;
+    }
+
+    .reveal h1,
+    .reveal h2 {
+      margin: 0;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    .reveal h1 {
+      font-size: 96px;
+      letter-spacing: -0.04em;
+    }
+
+    .reveal h2 {
+      font-size: 80px;
+      letter-spacing: -0.04em;
+    }
+
+    .intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 360px;
+      align-items: center;
+      gap: 56px;
+    }
+
+    .intro p {
+      margin: 24px 0 0;
+      font-size: 48px;
+      line-height: 1.4;
+    }
+
+    .intro img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
   </style>
 </head>
 <body>
   <div class="reveal">
     <div class="slides">
-      <section><h1>LT Slides</h1><p>プレゼンテーションの準備中</p></section>
-      <section><h2>2枚目のスライド</h2><p>← → キーで移動できます</p></section>
+      <section>
+        <h1>AI使って<br>楽したり楽しくなったり</h1>
+      </section>
+      <section>
+        <div class="intro">
+          <div>
+            <h2>自己紹介</h2>
+            <p>ノムラです。こんにちは。</p>
+          </div>
+          <img src="assets/nomura.png" width="400" height="400" alt="ノムラの自己紹介画像">
+        </div>
+      </section>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.js"></script>
-  <script>Reveal.initialize({ hash: true, slideNumber: true });</script>
+  <script>
+    Reveal.initialize({
+      width: 1280,
+      height: 720,
+      margin: 0,
+      controls: false,
+      progress: false,
+      hash: true,
+      transition: 'none'
+    });
+  </script>
 </body>
 </html>
