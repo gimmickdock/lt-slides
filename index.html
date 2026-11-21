@@ -12,53 +12,57 @@
     }
 
     .reveal {
+      --display-font: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif CJK JP", serif;
       font-family: "Hiragino Sans", "Yu Gothic", "Noto Sans CJK JP", Meiryo, sans-serif;
     }
 
     .reveal .slides section {
       box-sizing: border-box;
-      padding: 0 128px;
+      padding: 0 152px;
+      text-align: left;
     }
 
     .reveal h1,
     .reveal h2 {
       margin: 0;
-      font-weight: 700;
     }
 
     .reveal h1 {
-      font-size: 112px;
-      line-height: 1.08;
-      letter-spacing: -0.055em;
-    }
-
-    .cover-lead {
-      display: block;
-      margin-bottom: 26px;
-      font-size: 0.48em;
-      letter-spacing: -0.035em;
+      font-family: var(--display-font);
+      font-size: 86px;
+      font-weight: 500;
+      line-height: 1.32;
+      letter-spacing: -0.025em;
+      font-feature-settings: "palt";
     }
 
     .reveal h2 {
-      font-size: 27px;
-      line-height: 1.4;
-      letter-spacing: 0.12em;
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 1.5;
+      letter-spacing: 0.14em;
     }
 
     .intro {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 384px;
+      grid-template-columns: minmax(0, 1fr) 336px;
       align-items: center;
-      gap: 80px;
-      text-align: left;
+      gap: 112px;
     }
 
     .intro p {
-      margin: 30px 0 0;
-      font-size: 72px;
-      font-weight: 700;
-      line-height: 1.2;
-      letter-spacing: -0.055em;
+      margin: 38px 0 0;
+      font-family: var(--display-font);
+      font-size: 36px;
+      line-height: 1.45;
+    }
+
+    .intro-lead {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 64px;
+      font-weight: 500;
+      letter-spacing: -0.04em;
     }
 
     .intro img {
@@ -72,13 +76,13 @@
   <div class="reveal">
     <div class="slides">
       <section>
-        <h1><span class="cover-lead">AI使って</span>楽したり<br>楽しくなったり</h1>
+        <h1>AI使って楽したり<br>楽しくなったり</h1>
       </section>
       <section>
         <div class="intro">
           <div>
             <h2>自己紹介</h2>
-            <p>ノムラです。<br>こんにちは。</p>
+            <p><span class="intro-lead">ノムラです。</span>こんにちは。</p>
           </div>
           <img src="assets/nomura.png" width="400" height="400" alt="ノムラの自己紹介画像">
         </div>
